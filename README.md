@@ -6,7 +6,7 @@ It  has base on the repository 'tf-pose-estimation' built by ildoonet. '[tf-pose
 
 ## For beginners. Let's download some packages and weight files.
 
-### Dependencies(installation needed)
+### 1 Dependencies(installation needed)
 
 You need dependencies below.
 
@@ -14,14 +14,14 @@ You need dependencies below.
 - tensorflow 1.4.1+
 - opencv3, protobuf, python3-tk
 
-### Opensources(already included)
+### 2 Opensources(already included)
 
 - slim
 - slidingwindow
   - https://github.com/adamrehn/slidingwindow
   - I copied from the above git repo to modify few things.
 
-### etc download
+### 3 python libraries and etc
 ```
 # on the root of this repo.
 # install some python libraries
