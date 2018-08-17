@@ -4,7 +4,7 @@ This repository is for implementing module 2 for character pose estimation
 
 It  has base on the repository 'tf-pose-estimation' built by ildoonet. '[tf-pose-estimation]' is one of openpose implementation with TensorFlow.
 
-## For beginners. Let's download some packages and weight files.
+## (1) For beginners. Let's download some packages and weight files.
 
 ### 1 Dependencies(installation needed)
 
@@ -59,6 +59,22 @@ $ make
 
 # next, copy and merge 'pycocotools' into tf_pose/pycocotools
 ```
+
+## (2) Pre-train a model with processed coco dataset.
+
+Line drawing pictures are very different with general photos with real world objects. Therefore our model should be pre-trained by specifically-processed photos to be looked like line-drawing in Cartoon. It's believed to have good effect on transfer learning to make our model learn better and recognize human characters well on the line drawn photos.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
