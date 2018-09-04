@@ -267,24 +267,19 @@ def get_config():
     )
 
 
-def run(model_path, im, output):
+def run(model_path, im):
     pred_config = PredictConfig(
         model=Model(),
         session_init=get_model_loader(model_path),
         input_names=['image'],
-        output_names=['output' + str(k) for k in range(1, 7)])
+        output_names=['output2'])
     predictor = OfflinePredictor(pred_config)
-
-    assert im is not None
-    im = cv2.resize(
-        im, (im.shape[1] // 16 * 16, im.shape[0] // 16 * 16)
-    )[None, :, :, :].astype('float32')
     outputs = predictor(im)
     kernel = np.ones((1,1),np.uint8)
-    output = cv2.dilate(outputs[2][0]*255,kernel,iterations = 1)
+    output = cv2.dilate(outputs[0][0]*255,kernel,iterations = 1)
     thresh1 = cv2.threshold(output, 127, 255, cv2.THRESH_BINARY_INV)[1]
-
-    cv2.imwrite(thresh1, output)
+    return thresh1
+    #cv2.imwrite(output_path, thresh1)
 
 
 if __name__ == '__main__':
